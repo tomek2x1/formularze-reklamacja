@@ -3,9 +3,31 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+const data = {
+  producers: [
+    "Blaupunkt",
+    "Climative",
+    "Danfoss",
+    "Devi",
+    "Digitime",
+    "Dimplex",
+    "Ebeco",
+    "Eberle",
+    "Emko",
+    "Esco",
+    "Nexans",
+    "Rotenso",
+    "Sonniger",
+    "Thermoval",
+    "Vaco",
+    "Warmtec",
+    "Inny",
+  ],
+};
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App data={data} />
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -1,20 +1,36 @@
 import "./App.css";
 import styled from "styled-components";
 import TextField from "@mui/material/TextField";
+import InputLabel from "@mui/material/InputLabel";
+import Select from "@mui/material/Select";
+import FormControl from "@mui/material/FormControl";
+import MenuItem from "@mui/material/MenuItem";
 
-const App = () => {
+const App = ({ data }) => {
+  const producersList = data.producers.map((producer, index) => {
+    return (
+      <MenuItem key={index} value={producer}>
+        {producer}
+      </MenuItem>
+    );
+  });
+
   return (
     <div className="App">
       <FormWrapper>
         <form>
           <FormHeader>Formularz reklamacji</FormHeader>
           <TextField
-            id="outlined-password-input"
             label="Numer zamówienia lub numer faktury"
             type="text"
-            autoComplete="current-password"
             fullWidth
           />
+          <FormControl fullWidth>
+            <InputLabel id="producer">Producent</InputLabel>
+            <Select labelId="producer" label="producer">
+              {producersList}
+            </Select>
+          </FormControl>
         </form>
       </FormWrapper>
     </div>
